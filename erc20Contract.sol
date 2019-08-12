@@ -87,11 +87,11 @@ contract CustomERC20Coin is ERC20Interface, Owned, SafeMath {
     // ------------------------------------------------------------------------
     // Constructor
     // ------------------------------------------------------------------------
-    constructor(c_symbol, c_name, c_supply) public {
+    constructor(string memory c_symbol, string memory c_name, uint c_totalSupply) public {
         symbol = c_symbol;
         name = c_name;
         decimals = 18;
-        _totalSupply = c_supply * 10**decimals;
+        _totalSupply = c_totalSupply * 10**decimals;
         balances[msg.sender] = _totalSupply;
         emit Transfer(address(0), msg.sender, _totalSupply);
     }
