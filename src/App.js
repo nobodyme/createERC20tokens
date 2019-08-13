@@ -6,14 +6,12 @@ import './App.css';
 
 function App() {
 	return (
-		<div className="Provider">
-			<Web3Provider>
-				<div className="App">
-					<CreateToken />
-					<Description />
-				</div>
-			</Web3Provider>
-		</div>
+		<Web3Provider>
+			<div className="App">
+				<CreateToken />
+				<Description />
+			</div>
+		</Web3Provider>
 	);
 }
 export default App;

@@ -4,6 +4,7 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import contractABI from '../data/contractABI';
 import bytecode from '../data/bytecode';
+import '../styles/components/CreateToken.css';
 
 function CreateToken() {
 	const web3 = useWeb3();
@@ -47,9 +48,9 @@ function CreateToken() {
 					}
 				}}
 				render={({ errors, status, touched, isSubmitting }) => (
-					<Form>
+					<Form className="createTokenForm__form">
 						<Field
-							className="form__symbol"
+							className="form__symbol form__field"
 							name="symbol"
 							type="string"
 							placeholder="symbol"
@@ -58,7 +59,7 @@ function CreateToken() {
 							<div className="form__errors">{errors.symbol}</div>
 						)}
 						<Field
-							className="form__name"
+							className="form__name form__field"
 							name="name"
 							type="string"
 							placeholder="name"
@@ -67,7 +68,7 @@ function CreateToken() {
 							<div className="form__errors">{errors.name}</div>
 						)}
 						<Field
-							className="form__totalSupply"
+							className="form__totalSupply form__field"
 							name="totalSupply"
 							type=""
 							placeholder="supply"
@@ -76,7 +77,7 @@ function CreateToken() {
 							<div className="form__errors">{errors.totalSupply}</div>
 						)}
 						<button
-							className="form__submitButton"
+							className="form__submitButton form__field"
 							type="submit"
 							disabled={isSubmitting}
 							value="Submit"
