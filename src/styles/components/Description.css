@@ -2,9 +2,18 @@
 	height: 100%;
 	width: 100%;
 	display: flex;
-	flex: 1 1;
-	align-items: center;
+	flex-direction: column;
+	flex: 4 4;
+	/* align-items: center; */
 	justify-content: center;
 	background: var(--white-bg);
-	padding-right: calc((100vw - 1140px)/2);
-} 
+	/* padding-right: calc((100vw - 1140px)/2); */
+	padding: 0 20px;
+}
+
+.description__tag{
+	font-size: 4rem;
+	font-family: 'Heebo', sans-serif;
+	font-weight: bolder;
+	padding: 0 50px 0 100px;
+}
