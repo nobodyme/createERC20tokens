@@ -1,8 +1,34 @@
 .description{
 	height: 100%;
 	width: 100%;
-	display: flex;
 	flex: 4 4;
+}
+
+.description__network{
+	padding: 20px 0 0 10%;
+	background: var(--white-bg);
+}
+
+.description__networkInfo{
+	position: absolute;
+	background: #f1f2f3;
+}
+
+.description__networkInfo::before{
+	position: absolute;
+	content: '';
+	width: 8px;
+	height: 8px;
+	top: 7px;
+	left: -12px;
+	border-radius: 50%;
+	background: #870036;
+}
+
+.description__header{
+	height: 100%;
+	width: 100%;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	background: var(--white-bg);

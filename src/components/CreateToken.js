@@ -60,7 +60,7 @@ function CreateToken() {
 									type="text"
 									required
 								/>
-								<label className="form__fields__label" for="symbol">
+								<label className="form__fields__label" htmlFor="symbol">
 									Symbol
 								</label>
 							</div>
@@ -77,7 +77,7 @@ function CreateToken() {
 									type="text"
 									required
 								/>
-								<label className="form__fields__label" for="name">
+								<label className="form__fields__label" htmlFor="name">
 									Name
 								</label>
 							</div>
@@ -94,7 +94,7 @@ function CreateToken() {
 									type="text"
 									required
 								/>
-								<label className="form__fields__label" for="totalSupply">
+								<label className="form__fields__label" htmlFor="totalSupply">
 									Supply
 								</label>
 							</div>
