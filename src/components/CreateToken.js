@@ -15,9 +15,10 @@ function CreateToken() {
 				validationSchema={Yup.object().shape({
 					symbol: Yup.string().required('Symbol for your coin is required'),
 					name: Yup.string().required('Name for your coin is required'),
-					totalSupply: Yup.number().required(
-						'Total Supply of the coin is required'
-					)
+					totalSupply: Yup.number()
+						.typeError('Supply should be a number')
+						.required('Total Supply of the coin is required')
+						.min(0, 'Number should be greater than 0')
 				})}
 				onSubmit={async (values, { setSubmitting, setStatus }) => {
 					try {

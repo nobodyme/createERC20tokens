@@ -36,7 +36,7 @@ function Web3Provider(props) {
 function useWeb3() {
 	const context = React.useContext(Web3Context);
 	if (context === undefined) {
-		throw new Error(`useAuth must be used within a AuthProvider`);
+		throw new Error(`useWeb3 must be used within a Web3Provider`);
 	}
 	return context;
 }

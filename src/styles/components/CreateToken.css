@@ -25,9 +25,11 @@
 	width: 60%;
 	border-width: 0;
 	border-radius: 5px;
+	font-size: 0.814rem;
 }
 
 .form__submitButton{
 	background: var(--darkgreen-text);
 	color: var(--white-text);
+	font-weight: 500;
 }
