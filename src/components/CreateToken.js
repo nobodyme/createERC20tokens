@@ -65,7 +65,7 @@ function CreateToken() {
 								</label>
 							</div>
 							{errors.symbol && touched.symbol && (
-								<div className="form__fields__errors">{errors.symbol}</div>
+								<div className="form__fields__errors">!! {errors.symbol}</div>
 							)}
 						</div>
 						<div className="form__fields">
@@ -82,7 +82,7 @@ function CreateToken() {
 								</label>
 							</div>
 							{errors.name && touched.name && (
-								<div className="form__fields__errors">{errors.name}</div>
+								<div className="form__fields__errors">!! {errors.name}</div>
 							)}
 						</div>
 						<div className="form__fields">
@@ -99,7 +99,9 @@ function CreateToken() {
 								</label>
 							</div>
 							{errors.totalSupply && touched.totalSupply && (
-								<div className="form__fields__errors">{errors.totalSupply}</div>
+								<div className="form__fields__errors">
+									!! {errors.totalSupply}
+								</div>
 							)}
 						</div>
 						<div className="form__fields">
@@ -116,7 +118,7 @@ function CreateToken() {
 								Create Token
 							</button>
 							{status && status.msg && (
-								<div className="form__fields__errors">{status.msg}</div>
+								<div className="form__fields__errors">!{status.msg}</div>
 							)}
 						</div>
 					</Form>

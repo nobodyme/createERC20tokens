@@ -2,6 +2,7 @@
 	height: 100%;
 	width: 100%;
 	flex: 4 4;
+	background: var(--white-bg);
 }
 
 .description__network{
@@ -11,18 +12,19 @@
 
 .description__networkInfo{
 	position: absolute;
-	background: #f1f2f3;
+	background: var(--light-green-bg);
+	padding: 3px;
 }
 
 .description__networkInfo::before{
 	position: absolute;
 	content: '';
-	width: 8px;
-	height: 8px;
-	top: 7px;
-	left: -12px;
+	width: 9px;
+	height: 9px;
+	top: 9px;
+	left: -15px;
 	border-radius: 50%;
-	background: #870036;
+	background: var(--red-indicator);
 }
 
 .description__header{
@@ -31,7 +33,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: var(--white-bg);
 	/* padding-right: calc((100vw - 1140px)/2); */
 }
 

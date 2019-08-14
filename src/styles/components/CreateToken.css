@@ -36,6 +36,9 @@
 	font-size: 0.9rem;
 	padding: 28px 12px 6px;
 	height: 52px;
+	background: var(--white-bg);
+	border: 1px solid var(--darkgreen-text);
+	outline: none;
 }
 
 .form__fields__label{
@@ -70,6 +73,10 @@
 
 .form__submitButton:disabled{
 	opacity: 0.5;
+}
+
+.form__submitButton:hover{
+	background: var(--darkergreen-text);
 }
 
 .form__fields__errors{
