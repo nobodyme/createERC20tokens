@@ -8,16 +8,17 @@ import '../styles/components/CreateToken.css';
 
 function CreateToken() {
 	const web3 = useWeb3();
+
 	return (
 		<div className="createTokenForm">
 			<Formik
 				initialValues={{ symbol: '', name: '', totalSupply: '' }}
 				validationSchema={Yup.object().shape({
-					symbol: Yup.string().required('Symbol for your coin is required'),
-					name: Yup.string().required('Name for your coin is required'),
+					symbol: Yup.string().required('Symbol for your token is required'),
+					name: Yup.string().required('Name for your token is required'),
 					totalSupply: Yup.number()
 						.typeError('Supply should be a number')
-						.required('Total Supply of the coin is required')
+						.required('Total Supply of the token is required')
 						.min(0, 'Number should be greater than 0')
 				})}
 				onSubmit={async (values, { setSubmitting, setStatus }) => {
@@ -48,44 +49,76 @@ function CreateToken() {
 						setStatus({ msg: err });
 					}
 				}}
-				render={({ errors, status, touched, isSubmitting }) => (
+				render={({ values, errors, status, touched, isSubmitting }) => (
 					<Form className="createTokenForm__form">
-						<Field
-							className="form__symbol form__field"
-							name="symbol"
-							type="string"
-							placeholder="symbol"
-						/>
-						{errors.symbol && touched.symbol && (
-							<div className="form__errors">{errors.symbol}</div>
-						)}
-						<Field
-							className="form__name form__field"
-							name="name"
-							type="string"
-							placeholder="name"
-						/>
-						{errors.name && touched.name && (
-							<div className="form__errors">{errors.name}</div>
-						)}
-						<Field
-							className="form__totalSupply form__field"
-							name="totalSupply"
-							type=""
-							placeholder="supply"
-						/>
-						{errors.totalSupply && touched.totalSupply && (
-							<div className="form__errors">{errors.totalSupply}</div>
-						)}
-						<button
-							className="form__submitButton form__field"
-							type="submit"
-							disabled={isSubmitting}
-							value="Submit"
-						>
-							Create Token
-						</button>
-						{status && status.msg && <div className="errors">{status.msg}</div>}
+						<div className="form__fields">
+							<div className="form__fields__value">
+								<Field
+									className="form__symbol form__fields__input"
+									id="symbol"
+									name="symbol"
+									type="text"
+									required
+								/>
+								<label className="form__fields__label" for="symbol">
+									Symbol
+								</label>
+							</div>
+							{errors.symbol && touched.symbol && (
+								<div className="form__fields__errors">{errors.symbol}</div>
+							)}
+						</div>
+						<div className="form__fields">
+							<div className="form__fields__value">
+								<Field
+									className="form__name form__fields__input"
+									id="name"
+									name="name"
+									type="text"
+									required
+								/>
+								<label className="form__fields__label" for="name">
+									Name
+								</label>
+							</div>
+							{errors.name && touched.name && (
+								<div className="form__fields__errors">{errors.name}</div>
+							)}
+						</div>
+						<div className="form__fields">
+							<div className="form__fields__value">
+								<Field
+									id="totalSupply"
+									className="form__totalSupply form__fields__input"
+									name="totalSupply"
+									type="text"
+									required
+								/>
+								<label className="form__fields__label" for="totalSupply">
+									Supply
+								</label>
+							</div>
+							{errors.totalSupply && touched.totalSupply && (
+								<div className="form__fields__errors">{errors.totalSupply}</div>
+							)}
+						</div>
+						<div className="form__fields">
+							<button
+								className="form__submitButton form__fields__input"
+								type="submit"
+								disabled={
+									values.symbol === '' ||
+									values.name === '' ||
+									values.totalSupply === ''
+								}
+								value="Submit"
+							>
+								Create Token
+							</button>
+							{status && status.msg && (
+								<div className="form__fields__errors">{status.msg}</div>
+							)}
+						</div>
 					</Form>
 				)}
 			/>
