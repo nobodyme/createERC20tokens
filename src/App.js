@@ -12,15 +12,15 @@ function App() {
 	return (
 		<Web3Provider>
 			<div className="App">
-				<CreateToken
-					setStatusHandler={setStatus}
-					setTransactionHash={setTransactionHash}
-					setContractAddress={setContractAddress}
-				/>
 				<Description
 					status={status}
 					transactionHash={transactionHash}
 					contractAddress={contractAddress}
+				/>
+				<CreateToken
+					setStatusHandler={setStatus}
+					setTransactionHash={setTransactionHash}
+					setContractAddress={setContractAddress}
 				/>
 			</div>
 		</Web3Provider>
