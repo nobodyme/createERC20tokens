@@ -6,7 +6,11 @@ import contractABI from '../data/contractABI';
 import bytecode from '../data/bytecode';
 import '../styles/components/CreateToken.css';
 
-function CreateToken() {
+function CreateToken({
+	setStatusHandler,
+	setTransactionHash,
+	setContractAddress
+}) {
 	const web3 = useWeb3();
 
 	return (
@@ -23,6 +27,7 @@ function CreateToken() {
 				})}
 				onSubmit={async (values, { setSubmitting, setStatus }) => {
 					try {
+						setStatusHandler(1);
 						let accounts = await web3.eth.getAccounts();
 						let currentAccount = accounts[0];
 						let contractInstance = new web3.eth.Contract(contractABI);
@@ -38,11 +43,13 @@ function CreateToken() {
 								alert(error);
 							})
 							.on('transactionHash', transactionHash => {
-								alert(transactionHash);
+								setStatusHandler(2);
+								setTransactionHash(transactionHash);
 								setSubmitting(false);
 							})
 							.on('receipt', receipt => {
-								alert(receipt.contractAddress);
+								setStatusHandler(3);
+								setContractAddress(receipt.contractAddress);
 							});
 					} catch (err) {
 						setSubmitting(false);

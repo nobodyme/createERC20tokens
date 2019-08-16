@@ -1,0 +1,68 @@
+
+.statusIndicator{
+	width: 100%;
+	height: 100%;
+	padding: 0 10%;
+}
+
+.statusIndicator__steps{
+	width: 100%;
+	height: 50%;
+	display: flex;
+}
+
+.statusIndicator__bar{
+	width: 50%;
+	height: 5px;
+	position: relative;
+}
+
+.status__defaultBar, .status__valueBar{
+	width: 100%;
+	height: 100%;
+	background: var(--light-green-bg);
+	position: absolute;
+}
+
+.status__defaultBar::after, .status__valueBar::after, 
+.defaultBar__1::before, .valueBar__1::before{
+	position: absolute;
+	content: '';
+	top: -8px;
+	right: 0px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: var(--light-green-bg);
+}
+
+.defaultBar__1::before, .valueBar__1::before{
+	left: 0px;
+}
+
+.valueBar__status__1__half::before, .valueBar__status__1::before, .valueBar__status__1, 
+.valueBar__status__1::after, .valueBar__status__2, .valueBar__status__2::after{
+	background: var(--darkgreen-text);
+	transition: background-color 2s ease;
+}
+
+.statusIndicator__name{
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.statusName{
+	font-family: 'Heebo', sans-serif;
+	color: var(--green-bg);
+}
+
+.statusName__active{
+	font-weight: bold;
+	color: var(--darkergreen-text);
+}
+
+.statusName__link{
+	text-decoration: none;
+}
