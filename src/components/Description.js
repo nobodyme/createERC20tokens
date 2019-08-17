@@ -3,7 +3,7 @@ import '../styles/components/Description.css';
 
 import { useWeb3 } from '../context/web3-context';
 
-function Description({ status, transactionHash, contractAddress }) {
+function Description() {
 	const web3 = useWeb3();
 	const [network, setNetwork] = useState(null);
 
@@ -24,7 +24,7 @@ function Description({ status, transactionHash, contractAddress }) {
 					<div className="description__network">
 						{network && (
 							<span className="description__networkInfo">
-								Connected to {network}
+								Connected to {network} network
 							</span>
 						)}
 					</div>

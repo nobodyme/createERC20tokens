@@ -2,17 +2,22 @@ import React, { useState } from 'react';
 import { useWeb3 } from '../context/web3-context';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+
+import '../styles/components/CreateToken.css';
+
+import FormFields from './FormFields';
+import StatusIndicator from './StatusIndicator';
+
 import contractABI from '../data/contractABI';
 import bytecode from '../data/bytecode';
-import '../styles/components/CreateToken.css';
 import { GiThunderball } from 'react-icons/gi';
-import FormFields from './FormFields';
 
 function CreateToken() {
 	const web3 = useWeb3();
-	const [status, setStatusHandler] = useState(0);
+	const [processingStage, setProcessingStage] = useState(0);
 	const [transactionHash, setTransactionHash] = useState(null);
 	const [contractAddress, setContractAddress] = useState(null);
+	const [submitToggle, setSubmitToggle] = useState(false);
 
 	return (
 		<div className="createTokenForm">
@@ -28,7 +33,8 @@ function CreateToken() {
 				})}
 				onSubmit={async (values, { setSubmitting, setStatus }) => {
 					try {
-						setStatusHandler(1);
+						setSubmitToggle(true);
+						setProcessingStage(1);
 						let accounts = await web3.eth.getAccounts();
 						let currentAccount = accounts[0];
 						let contractInstance = new web3.eth.Contract(contractABI);
@@ -44,12 +50,12 @@ function CreateToken() {
 								alert(error);
 							})
 							.on('transactionHash', transactionHash => {
-								setStatusHandler(2);
+								setProcessingStage(2);
 								setTransactionHash(transactionHash);
 								setSubmitting(false);
 							})
 							.on('receipt', receipt => {
-								setStatusHandler(3);
+								setProcessingStage(3);
 								setContractAddress(receipt.contractAddress);
 							});
 					} catch (err) {
@@ -63,7 +69,9 @@ function CreateToken() {
 						<FormFields />
 						<div className="form__submitContainer">
 							<button
-								className="form__submitButton"
+								className={`form__submitButton ${
+									submitToggle === false ? '' : 'flipSubmitButton'
+								}`}
 								type="submit"
 								disabled={
 									values.symbol === '' ||
@@ -75,7 +83,7 @@ function CreateToken() {
 								<span className="form__submitButton__icon">
 									<GiThunderball />
 								</span>
-								Generate
+								{submitToggle === false ? 'Generate' : 'Generate New token'}
 							</button>
 							{status && status.msg && (
 								<div className="form__errors">! {status.msg}</div>

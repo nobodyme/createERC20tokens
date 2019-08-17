@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/components/StatusIndicator.css';
-import { FaExternalLinkSquareAlt } from 'react-icons/fa';
 import { getEtherscanUrl } from '../utils/getEtherscanUrl';
 
 function StatusIndicator({
@@ -12,58 +11,48 @@ function StatusIndicator({
 	let etherscanUrl = getEtherscanUrl(network);
 	return (
 		<div className="statusIndicator">
-			<div className="statusIndicator__steps">
-				<div className="statusIndicator__bar">
-					<div className="status__defaultBar defaultBar__1" />
-					<div
-						className={`status__valueBar valueBar__1 ${
-							status === 1
-								? 'valueBar__status__1__half'
-								: status >= 2
-								? 'valueBar__status__1'
-								: ''
-						}`}
-					/>
-				</div>
-				<div className="statusIndicator__bar">
-					<div className="status__defaultBar" />
-					<div
-						className={`status__valueBar ${
-							status === 3 ? 'valueBar__status__2' : ''
-						}`}
-					/>
+			<div className="statusIndicator__section__1">
+				<div className="statusIndicator__img" />
+				<div className="statusIndicator__header">
+					<div className="statusIndicator__title">
+						Initiation token creation
+					</div>
+					<div>Success</div>
 				</div>
 			</div>
-			<div className="statusIndicator__name">
-				<div
-					className={`statusName ${status >= 1 ? 'statusName__active' : ''}`}
-				>
-					Token initiation
+			<div className="statusIndicator__section__2">
+				<div className="statusIndicator__img" />
+				<div className="statusIndicator__header">
+					<div className="statusIndicator__title">Transaction Hash</div>
+					{status >= 2 ? (
+						<a
+							className="statusName statusName__active statusName__link"
+							href={`${etherscanUrl}/tx/${transactionHash}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							View on etherscan
+						</a>
+					) : null}
+					<div>Success</div>
 				</div>
-				{status >= 2 ? (
-					<a
-						className="statusName statusName__active statusName__link"
-						href={`${etherscanUrl}/tx/${transactionHash}`}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Transaction Hash <FaExternalLinkSquareAlt />
-					</a>
-				) : (
-					<div className="statusName">Transaction Hash</div>
-				)}
-				{status === 3 ? (
-					<a
-						className="statusName statusName__active statusName__link"
-						href={`${etherscanUrl}/address/${contractAddress}`}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Contract Address <FaExternalLinkSquareAlt />
-					</a>
-				) : (
-					<div className="statusName">Contract Address</div>
-				)}
+			</div>
+			<div className="statusIndicator__section__3">
+				<div className="statusIndicator__img" />
+				<div className="statusIndicator__header">
+					<div className="statusIndicator__title">Transaction Hash</div>
+					{status === 3 ? (
+						<a
+							className="statusName statusName__active statusName__link"
+							href={`${etherscanUrl}/address/${contractAddress}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							View on etherscan
+						</a>
+					) : null}
+					<div>Success</div>
+				</div>
 			</div>
 		</div>
 	);
