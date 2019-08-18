@@ -43,7 +43,6 @@
 	top: 9px;
 	left: -15px;
 	border-radius: 50%;
-	background: var(--green);
 }
 
 .description__networkInfo::after{
@@ -54,5 +53,20 @@
     top: 6px;
     left: -18px;
     border-radius: 50%;
+}
+
+.networkInfo__active::before{
+	background: var(--green);
+}
+
+.networkInfo__active::after{
 	border: 1px solid var(--green);
+}
+
+.networkInfo__inactive::before{
+	background: var(--red-600);
+}
+
+.networkInfo__inactive::after{
+	border: 1px solid var(--red-400);
 }

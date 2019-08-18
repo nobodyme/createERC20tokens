@@ -15,20 +15,12 @@ function Web3Provider(props) {
 				} catch (error) {
 					// error code 1 is set when user denied access
 					setWeb3(1);
+					// web3 remains null when web3 not present
 				}
-			} else {
-				// error code 2 is set when ethereum object not found
-				setWeb3(2);
 			}
 		};
 		getWeb3();
 	}, []);
-
-	if (web3 === 1) {
-		return <div>User denied access to ethereum wallet</div>;
-	} else if (web3 === 2) {
-		return <div>Install metamask</div>;
-	}
 
 	return <Web3Context.Provider value={web3} {...props} />;
 }

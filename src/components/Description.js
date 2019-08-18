@@ -8,7 +8,7 @@ function Description() {
 	const [network, setNetwork] = useState(null);
 
 	React.useEffect(() => {
-		if (web3 !== null) {
+		if (web3 !== null && web3 !== 1) {
 			web3.eth.net.getNetworkType().then(currentNetwork => {
 				setNetwork(currentNetwork);
 			});
@@ -22,9 +22,13 @@ function Description() {
 					<div className="description__tag description__token">ERC20</div>
 					<div className="description__tag">Generate Tokens</div>
 					<div className="description__network">
-						{network && (
-							<span className="description__networkInfo">
+						{network !== null ? (
+							<span className="description__networkInfo networkInfo__active">
 								Connected to {network} network
+							</span>
+						) : (
+							<span className="description__networkInfo networkInfo__inactive">
+								Not connected
 							</span>
 						)}
 					</div>

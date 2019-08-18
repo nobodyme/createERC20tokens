@@ -40,7 +40,11 @@ code {
 	--blue: #0057B0;
 	--green: #68CD5E;
 	--dark-green: #21d010;
-	--red: #d11124;
+	--yellow-200: #fffbe6;
+	--yellow-400: #ffe58f;
+	--red-200: #fff1f0;
+	--red-400: #ffa39e;
+	--red-600: #d11124;
 	--grey-200: #E5E5E5;
 	--grey-400: #5F5F5F;
 	--black: #272727;
