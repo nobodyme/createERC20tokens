@@ -1,20 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/components/Description.css';
 
-import { useWeb3 } from '../context/web3-context';
-
-function Description() {
-	const web3 = useWeb3();
-	const [network, setNetwork] = useState(null);
-
-	React.useEffect(() => {
-		if (web3 !== null && web3 !== 1) {
-			web3.eth.net.getNetworkType().then(currentNetwork => {
-				setNetwork(currentNetwork);
-			});
-		}
-	}, [web3]);
-
+function Description({ ethereumNetwork }) {
 	return (
 		<div className="description">
 			<div className="description__header">
@@ -22,9 +9,9 @@ function Description() {
 					<div className="description__tag description__token">ERC20</div>
 					<div className="description__tag">Generate Tokens</div>
 					<div className="description__network">
-						{network !== null ? (
+						{ethereumNetwork !== null ? (
 							<span className="description__networkInfo networkInfo__active">
-								Connected to {network} network
+								Connected to {ethereumNetwork} network
 							</span>
 						) : (
 							<span className="description__networkInfo networkInfo__inactive">

@@ -1,0 +1,15 @@
+.statusHelper{
+	font-size: 0.9rem;
+}
+
+.status__1{
+	color: var(--blue);
+}
+
+.status__2{
+	color: var(--green);
+}
+
+.status__3{
+	color: var(--orange);
+}
