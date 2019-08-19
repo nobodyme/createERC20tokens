@@ -13,7 +13,7 @@ import { GiThunderball } from 'react-icons/gi';
 function CreateTokenForm({
 	web3,
 	setSubmitToggle,
-	setProcessingStage,
+	setProcessedStage,
 	setTransactionHash,
 	setContractAddress
 }) {
@@ -31,7 +31,7 @@ function CreateTokenForm({
 			onSubmit={async (values, { setSubmitting, setStatus }) => {
 				try {
 					setSubmitToggle(bool => !bool);
-					setProcessingStage(1);
+					setProcessedStage(1);
 					let accounts = await web3.eth.getAccounts();
 					let currentAccount = accounts[0];
 					let contractInstance = new web3.eth.Contract(contractABI);
@@ -47,12 +47,12 @@ function CreateTokenForm({
 							alert(error);
 						})
 						.on('transactionHash', transactionHash => {
-							setProcessingStage(2);
+							setProcessedStage(2);
 							setTransactionHash(transactionHash);
 							setSubmitting(false);
 						})
 						.on('receipt', receipt => {
-							setProcessingStage(3);
+							setProcessedStage(3);
 							setContractAddress(receipt.contractAddress);
 						});
 				} catch (err) {

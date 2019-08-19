@@ -18,7 +18,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: var(--green);
+	background: var(--green-200);
 	color: white;
 	width: 100%;
 	border-radius: 3px;
@@ -36,7 +36,7 @@
 }
 
 .form__submitButton:hover:enabled{
-	background: var(--dark-green);
+	background: var(--green-400);
 }
 
 .form__submitButton__icon{

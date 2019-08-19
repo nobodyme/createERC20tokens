@@ -11,12 +11,12 @@ import { GiThunderball } from 'react-icons/gi';
 
 function StageIndicator({
 	setSubmitToggle,
-	processingStage,
+	processedStage,
 	transactionHash,
 	contractAddress,
-	network
+	ethereumNetwork
 }) {
-	let etherscanUrl = getEtherscanUrl(network);
+	let etherscanUrl = getEtherscanUrl(ethereumNetwork);
 
 	return (
 		<div className="stageIndicator">
@@ -29,7 +29,7 @@ function StageIndicator({
 						<div className="stageIndicator__title">
 							Initiating Token Creation
 						</div>
-						<StatusHelper processingStage={processingStage} elementStage={1} />
+						<StatusHelper processedStage={processedStage} elementStage={1} />
 					</div>
 				</div>
 				<div className="stageIndicator__section__2 stageIndicator__section">
@@ -38,7 +38,7 @@ function StageIndicator({
 					</div>
 					<div className="stageIndicator__header">
 						<div className="stageIndicator__title">Transaction Hash</div>
-						{processingStage >= 2 ? (
+						{processedStage >= 2 ? (
 							<a
 								className="stageIndicator__link"
 								href={`${etherscanUrl}/tx/${transactionHash}`}
@@ -48,7 +48,7 @@ function StageIndicator({
 								View on etherscan
 							</a>
 						) : null}
-						<StatusHelper processingStage={processingStage} elementStage={1} />
+						<StatusHelper processedStage={processedStage} elementStage={2} />
 					</div>
 				</div>
 				<div className="stageIndicator__section__3 stageIndicator__section">
@@ -57,7 +57,7 @@ function StageIndicator({
 					</div>
 					<div className="stageIndicator__header">
 						<div className="stageIndicator__title">Contract Address</div>
-						{processingStage === 3 ? (
+						{processedStage === 3 ? (
 							<a
 								className="stageIndicator__link"
 								href={`${etherscanUrl}/address/${contractAddress}`}
@@ -67,7 +67,7 @@ function StageIndicator({
 								View on etherscan
 							</a>
 						) : null}
-						<StatusHelper processingStage={processingStage} elementStage={1} />
+						<StatusHelper processedStage={processedStage} elementStage={3} />
 					</div>
 				</div>
 			</div>

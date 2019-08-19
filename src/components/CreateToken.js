@@ -10,7 +10,7 @@ import StageIndicator from './StageIndicator';
 function CreateToken({ ethereumNetwork }) {
 	const web3 = useWeb3();
 
-	const [processingStage, setProcessingStage] = useState(0);
+	const [processedStage, setProcessedStage] = useState(0);
 	const [transactionHash, setTransactionHash] = useState(null);
 	const [contractAddress, setContractAddress] = useState(null);
 	const [submitToggle, setSubmitToggle] = useState(false);
@@ -29,7 +29,7 @@ function CreateToken({ ethereumNetwork }) {
 									<CreateTokenForm
 										web3={web3}
 										setSubmitToggle={setSubmitToggle}
-										setProcessingStage={setProcessingStage}
+										setProcessedStage={setProcessedStage}
 										setTransactionHash={setTransactionHash}
 										setContractAddress={setContractAddress}
 									/>
@@ -37,7 +37,7 @@ function CreateToken({ ethereumNetwork }) {
 							) : (
 								<StageIndicator
 									setSubmitToggle={setSubmitToggle}
-									processingStage={processingStage}
+									processedStage={processedStage}
 									transactionHash={transactionHash}
 									contractAddress={contractAddress}
 									ethereumNetwork={ethereumNetwork}

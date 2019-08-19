@@ -56,11 +56,11 @@
 }
 
 .networkInfo__active::before{
-	background: var(--green);
+	background: var(--green-200);
 }
 
 .networkInfo__active::after{
-	border: 1px solid var(--green);
+	border: 1px solid var(--green-200);
 }
 
 .networkInfo__inactive::before{
