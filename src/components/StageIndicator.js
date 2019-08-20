@@ -5,9 +5,8 @@ import StatusHelper from './StatusHelper';
 
 import { getEtherscanUrl } from '../utils/getEtherscanUrl';
 import { FaEthereum } from 'react-icons/fa';
-import { GiPayMoney } from 'react-icons/gi';
-import { IoIosNavigate } from 'react-icons/io';
-import { GiThunderball } from 'react-icons/gi';
+import { GiPayMoney, GiThunderball } from 'react-icons/gi';
+import { IoIosNavigate, IoMdCopy, IoIosArrowRoundUp } from 'react-icons/io';
 
 function StageIndicator({
 	setSubmitToggle,
@@ -39,14 +38,22 @@ function StageIndicator({
 					<div className="stageIndicator__header">
 						<div className="stageIndicator__title">Transaction Hash</div>
 						{processedStage >= 2 ? (
-							<a
-								className="stageIndicator__link"
-								href={`${etherscanUrl}/tx/${transactionHash}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								View on etherscan
-							</a>
+							<div className="stageIndicator__link__container">
+								<a
+									className="stageIndicator__link"
+									href={`${etherscanUrl}/tx/${transactionHash}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									View on etherscan
+									<span className="stageIndicator__extLink">
+										<IoIosArrowRoundUp />
+									</span>
+								</a>
+								<span className="stageIndicator__copy">
+									<IoMdCopy />
+								</span>
+							</div>
 						) : null}
 						<StatusHelper processedStage={processedStage} elementStage={2} />
 					</div>
@@ -58,14 +65,22 @@ function StageIndicator({
 					<div className="stageIndicator__header">
 						<div className="stageIndicator__title">Contract Address</div>
 						{processedStage === 3 ? (
-							<a
-								className="stageIndicator__link"
-								href={`${etherscanUrl}/address/${contractAddress}`}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								View on etherscan
-							</a>
+							<div className="stageIndicator__link__container">
+								<a
+									className="stageIndicator__link"
+									href={`${etherscanUrl}/address/${contractAddress}`}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									View on etherscan
+									<span className="stageIndicator__extLink">
+										<IoIosArrowRoundUp />
+									</span>
+								</a>
+								<span className="stageIndicator__copy">
+									<IoMdCopy />
+								</span>
+							</div>
 						) : null}
 						<StatusHelper processedStage={processedStage} elementStage={3} />
 					</div>

@@ -28,7 +28,7 @@ function CreateTokenForm({
 					.required('Total Supply of the token is required')
 					.min(0, 'Number should be greater than 0')
 			})}
-			onSubmit={async (values, { setSubmitting, setStatus }) => {
+			onSubmit={async (values, { setStatus }) => {
 				try {
 					setSubmitToggle(bool => !bool);
 					setProcessedStage(1);
@@ -44,19 +44,17 @@ function CreateTokenForm({
 							from: currentAccount
 						})
 						.on('error', error => {
-							alert(error);
+							setStatus({ msg: error });
 						})
 						.on('transactionHash', transactionHash => {
 							setProcessedStage(2);
 							setTransactionHash(transactionHash);
-							setSubmitting(false);
 						})
 						.on('receipt', receipt => {
 							setProcessedStage(3);
 							setContractAddress(receipt.contractAddress);
 						});
 				} catch (err) {
-					setSubmitting(false);
 					setStatus({ msg: err });
 				}
 			}}

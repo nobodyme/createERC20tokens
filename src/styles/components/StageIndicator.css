@@ -58,11 +58,31 @@
 	font-size: 1rem;
 }
 
+.stageIndicator__link__container{
+	padding: 5px 10px 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .stageIndicator__link{
-	padding: 5px 0;
 	font-size: 0.8rem;
 	color: var(--grey-600);
 	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.stageIndicator__copy, .stageIndicator__extLink{
+	color: var(--blue);
+	padding-left: 10px;
+	box-shadow: 0 0.5rem 1.2rem rgba(189,197,209,.2);
+}
+
+.stageIndicator__extLink > svg{
+	font-size: 1.1rem;
+	transform: rotate(40deg);
 }
 
 .newTokenButton__container{

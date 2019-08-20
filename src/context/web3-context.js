@@ -6,7 +6,7 @@ const Web3Context = React.createContext();
 function Web3Provider(props) {
 	const [web3, setWeb3] = useState(null);
 
-	React.useLayoutEffect(() => {
+	React.useEffect(() => {
 		const getWeb3 = async () => {
 			if (window.ethereum) {
 				setWeb3(new Web3(new Web3(window.ethereum).currentProvider));
