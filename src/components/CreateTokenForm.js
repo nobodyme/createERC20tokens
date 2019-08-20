@@ -52,7 +52,7 @@ function CreateTokenForm({
 						})
 						.on('receipt', receipt => {
 							setProcessedStage(3);
-							setContractAddress(receipt.contractAddress);
+							setContractAddress(receipt.contractAddress.toLowerCase());
 						});
 				} catch (err) {
 					setStatus({ msg: err });
