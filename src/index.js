@@ -1,14 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Web3Provider } from './context/web3-context';
+import Media from 'react-media';
+
+import App from './App';
+import Mobile from './components/Mobile';
 
 ReactDOM.render(
-	<Web3Provider>
-		<App />
-	</Web3Provider>,
+	<Media query="(min-width: 320px) and (max-width: 767px)">
+		{matches =>
+			matches ? (
+				<Mobile />
+			) : (
+				<Web3Provider>
+					<App />
+				</Web3Provider>
+			)
+		}
+	</Media>,
 	document.getElementById('root')
 );
 
