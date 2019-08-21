@@ -15,7 +15,8 @@ function CreateTokenForm({
 	setSubmitToggle,
 	setProcessedStage,
 	setTransactionHash,
-	setContractAddress
+	setContractAddress,
+	setDeploymentError
 }) {
 	return (
 		<Formik
@@ -44,7 +45,7 @@ function CreateTokenForm({
 							from: currentAccount
 						})
 						.on('error', error => {
-							setStatus({ msg: error });
+							setDeploymentError(error.message);
 						})
 						.on('transactionHash', transactionHash => {
 							setProcessedStage(2);
@@ -54,8 +55,8 @@ function CreateTokenForm({
 							setProcessedStage(3);
 							setContractAddress(receipt.contractAddress.toLowerCase());
 						});
-				} catch (err) {
-					setStatus({ msg: err });
+				} catch (error) {
+					setDeploymentError(error.message);
 				}
 			}}
 			render={({ values, status }) => (

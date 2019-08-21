@@ -14,6 +14,7 @@ function CreateToken({ ethereumNetwork }) {
 	const [transactionHash, setTransactionHash] = useState(null);
 	const [contractAddress, setContractAddress] = useState(null);
 	const [submitToggle, setSubmitToggle] = useState(false);
+	const [deploymentError, setDeploymentError] = useState(null);
 
 	return (
 		<div className="createToken">
@@ -28,6 +29,7 @@ function CreateToken({ ethereumNetwork }) {
 									<div className="createToken__formHeader">Generate Tokens</div>
 									<CreateTokenForm
 										web3={web3}
+										setDeploymentError={setDeploymentError}
 										setSubmitToggle={setSubmitToggle}
 										setProcessedStage={setProcessedStage}
 										setTransactionHash={setTransactionHash}
@@ -36,6 +38,7 @@ function CreateToken({ ethereumNetwork }) {
 								</>
 							) : (
 								<StageIndicator
+									deploymentError={deploymentError}
 									setSubmitToggle={setSubmitToggle}
 									processedStage={processedStage}
 									transactionHash={transactionHash}

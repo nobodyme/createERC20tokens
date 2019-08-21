@@ -13,7 +13,8 @@ function StageIndicator({
 	processedStage,
 	transactionHash,
 	contractAddress,
-	ethereumNetwork
+	ethereumNetwork,
+	deploymentError
 }) {
 	let etherscanUrl = getEtherscanUrl(ethereumNetwork);
 
@@ -110,6 +111,9 @@ function StageIndicator({
 					</span>
 					Generate New Token
 				</button>
+				{deploymentError && (
+					<div className="form__errors">! {deploymentError}</div>
+				)}
 			</div>
 		</div>
 	);
