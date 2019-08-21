@@ -46,11 +46,18 @@ function StageIndicator({
 									rel="noopener noreferrer"
 								>
 									View on etherscan
-									<span className="stageIndicator__extLink">
+									<span
+										title="open in etherscan"
+										className="stageIndicator__extLink"
+									>
 										<IoIosArrowRoundUp />
 									</span>
 								</a>
-								<span className="stageIndicator__copy">
+								<span
+									className="stageIndicator__copy"
+									title="copy transaction hash"
+									onClick={() => navigator.clipboard.writeText(transactionHash)}
+								>
 									<IoMdCopy />
 								</span>
 							</div>
@@ -73,11 +80,18 @@ function StageIndicator({
 									rel="noopener noreferrer"
 								>
 									View on etherscan
-									<span className="stageIndicator__extLink">
+									<span
+										title="open in etherscan"
+										className="stageIndicator__extLink"
+									>
 										<IoIosArrowRoundUp />
 									</span>
 								</a>
-								<span className="stageIndicator__copy">
+								<span
+									className="stageIndicator__copy"
+									title="copy contract address"
+									onClick={() => navigator.clipboard.writeText(contractAddress)}
+								>
 									<IoMdCopy />
 								</span>
 							</div>
