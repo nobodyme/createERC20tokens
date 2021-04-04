@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/components/StatusHelper.css';
+import React from "react";
+import "../styles/components/StatusHelper.css";
 
 function StatusHelper({ processedStage, elementStage }) {
 	if (processedStage === elementStage - 1) {

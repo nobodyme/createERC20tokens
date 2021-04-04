@@ -2,474 +2,474 @@ const contractABI = [
 	{
 		constant: false,
 		inputs: [],
-		name: 'acceptOwnership',
+		name: "acceptOwnership",
 		outputs: [],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'function'
+		stateMutability: "nonpayable",
+		type: "function"
 	},
 	{
 		constant: false,
 		inputs: [
 			{
-				name: 'spender',
-				type: 'address'
+				name: "spender",
+				type: "address"
 			},
 			{
-				name: 'tokens',
-				type: 'uint256'
+				name: "tokens",
+				type: "uint256"
 			}
 		],
-		name: 'approve',
+		name: "approve",
 		outputs: [
 			{
-				name: 'success',
-				type: 'bool'
+				name: "success",
+				type: "bool"
 			}
 		],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'function'
+		stateMutability: "nonpayable",
+		type: "function"
 	},
 	{
 		constant: false,
 		inputs: [
 			{
-				name: 'spender',
-				type: 'address'
+				name: "spender",
+				type: "address"
 			},
 			{
-				name: 'tokens',
-				type: 'uint256'
+				name: "tokens",
+				type: "uint256"
 			},
 			{
-				name: 'data',
-				type: 'bytes'
+				name: "data",
+				type: "bytes"
 			}
 		],
-		name: 'approveAndCall',
+		name: "approveAndCall",
 		outputs: [
 			{
-				name: 'success',
-				type: 'bool'
+				name: "success",
+				type: "bool"
 			}
 		],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'function'
+		stateMutability: "nonpayable",
+		type: "function"
 	},
 	{
 		constant: false,
 		inputs: [],
-		name: 'destruct',
+		name: "destruct",
 		outputs: [],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'function'
+		stateMutability: "nonpayable",
+		type: "function"
 	},
 	{
 		constant: false,
 		inputs: [
 			{
-				name: 'to',
-				type: 'address'
+				name: "to",
+				type: "address"
 			},
 			{
-				name: 'tokens',
-				type: 'uint256'
+				name: "tokens",
+				type: "uint256"
 			}
 		],
-		name: 'transfer',
+		name: "transfer",
 		outputs: [
 			{
-				name: 'success',
-				type: 'bool'
+				name: "success",
+				type: "bool"
 			}
 		],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'function'
+		stateMutability: "nonpayable",
+		type: "function"
 	},
 	{
 		constant: false,
 		inputs: [
 			{
-				name: 'tokenAddress',
-				type: 'address'
+				name: "tokenAddress",
+				type: "address"
 			},
 			{
-				name: 'tokens',
-				type: 'uint256'
+				name: "tokens",
+				type: "uint256"
 			}
 		],
-		name: 'transferAnyERC20Token',
+		name: "transferAnyERC20Token",
 		outputs: [
 			{
-				name: 'success',
-				type: 'bool'
+				name: "success",
+				type: "bool"
 			}
 		],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'function'
+		stateMutability: "nonpayable",
+		type: "function"
 	},
 	{
 		constant: false,
 		inputs: [
 			{
-				name: 'from',
-				type: 'address'
+				name: "from",
+				type: "address"
 			},
 			{
-				name: 'to',
-				type: 'address'
+				name: "to",
+				type: "address"
 			},
 			{
-				name: 'tokens',
-				type: 'uint256'
+				name: "tokens",
+				type: "uint256"
 			}
 		],
-		name: 'transferFrom',
+		name: "transferFrom",
 		outputs: [
 			{
-				name: 'success',
-				type: 'bool'
+				name: "success",
+				type: "bool"
 			}
 		],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'function'
+		stateMutability: "nonpayable",
+		type: "function"
 	},
 	{
 		constant: false,
 		inputs: [
 			{
-				name: '_newOwner',
-				type: 'address'
+				name: "_newOwner",
+				type: "address"
 			}
 		],
-		name: 'transferOwnership',
+		name: "transferOwnership",
 		outputs: [],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'function'
+		stateMutability: "nonpayable",
+		type: "function"
 	},
 	{
 		inputs: [
 			{
-				name: 'c_symbol',
-				type: 'string'
+				name: "c_symbol",
+				type: "string"
 			},
 			{
-				name: 'c_name',
-				type: 'string'
+				name: "c_name",
+				type: "string"
 			},
 			{
-				name: 'c_totalSupply',
-				type: 'uint256'
+				name: "c_totalSupply",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'nonpayable',
-		type: 'constructor'
+		stateMutability: "nonpayable",
+		type: "constructor"
 	},
 	{
 		payable: true,
-		stateMutability: 'payable',
-		type: 'fallback'
+		stateMutability: "payable",
+		type: "fallback"
 	},
 	{
 		anonymous: false,
 		inputs: [
 			{
 				indexed: true,
-				name: '_from',
-				type: 'address'
+				name: "_from",
+				type: "address"
 			},
 			{
 				indexed: true,
-				name: '_to',
-				type: 'address'
+				name: "_to",
+				type: "address"
 			}
 		],
-		name: 'OwnershipTransferred',
-		type: 'event'
+		name: "OwnershipTransferred",
+		type: "event"
 	},
 	{
 		anonymous: false,
 		inputs: [
 			{
 				indexed: true,
-				name: 'from',
-				type: 'address'
+				name: "from",
+				type: "address"
 			},
 			{
 				indexed: true,
-				name: 'to',
-				type: 'address'
+				name: "to",
+				type: "address"
 			},
 			{
 				indexed: false,
-				name: 'tokens',
-				type: 'uint256'
+				name: "tokens",
+				type: "uint256"
 			}
 		],
-		name: 'Transfer',
-		type: 'event'
+		name: "Transfer",
+		type: "event"
 	},
 	{
 		anonymous: false,
 		inputs: [
 			{
 				indexed: true,
-				name: 'tokenOwner',
-				type: 'address'
+				name: "tokenOwner",
+				type: "address"
 			},
 			{
 				indexed: true,
-				name: 'spender',
-				type: 'address'
+				name: "spender",
+				type: "address"
 			},
 			{
 				indexed: false,
-				name: 'tokens',
-				type: 'uint256'
+				name: "tokens",
+				type: "uint256"
 			}
 		],
-		name: 'Approval',
-		type: 'event'
+		name: "Approval",
+		type: "event"
 	},
 	{
 		constant: true,
 		inputs: [],
-		name: '_totalSupply',
+		name: "_totalSupply",
 		outputs: [
 			{
-				name: '',
-				type: 'uint256'
+				name: "",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [
 			{
-				name: 'tokenOwner',
-				type: 'address'
+				name: "tokenOwner",
+				type: "address"
 			},
 			{
-				name: 'spender',
-				type: 'address'
+				name: "spender",
+				type: "address"
 			}
 		],
-		name: 'allowance',
+		name: "allowance",
 		outputs: [
 			{
-				name: 'remaining',
-				type: 'uint256'
+				name: "remaining",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [
 			{
-				name: 'tokenOwner',
-				type: 'address'
+				name: "tokenOwner",
+				type: "address"
 			}
 		],
-		name: 'balanceOf',
+		name: "balanceOf",
 		outputs: [
 			{
-				name: 'balance',
-				type: 'uint256'
+				name: "balance",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [],
-		name: 'decimals',
+		name: "decimals",
 		outputs: [
 			{
-				name: '',
-				type: 'uint256'
+				name: "",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [],
-		name: 'name',
+		name: "name",
 		outputs: [
 			{
-				name: '',
-				type: 'string'
+				name: "",
+				type: "string"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [],
-		name: 'newOwner',
+		name: "newOwner",
 		outputs: [
 			{
-				name: '',
-				type: 'address'
+				name: "",
+				type: "address"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [],
-		name: 'owner',
+		name: "owner",
 		outputs: [
 			{
-				name: '',
-				type: 'address'
+				name: "",
+				type: "address"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [
 			{
-				name: 'a',
-				type: 'uint256'
+				name: "a",
+				type: "uint256"
 			},
 			{
-				name: 'b',
-				type: 'uint256'
+				name: "b",
+				type: "uint256"
 			}
 		],
-		name: 'safeAdd',
+		name: "safeAdd",
 		outputs: [
 			{
-				name: 'c',
-				type: 'uint256'
+				name: "c",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'pure',
-		type: 'function'
+		stateMutability: "pure",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [
 			{
-				name: 'a',
-				type: 'uint256'
+				name: "a",
+				type: "uint256"
 			},
 			{
-				name: 'b',
-				type: 'uint256'
+				name: "b",
+				type: "uint256"
 			}
 		],
-		name: 'safeDiv',
+		name: "safeDiv",
 		outputs: [
 			{
-				name: 'c',
-				type: 'uint256'
+				name: "c",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'pure',
-		type: 'function'
+		stateMutability: "pure",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [
 			{
-				name: 'a',
-				type: 'uint256'
+				name: "a",
+				type: "uint256"
 			},
 			{
-				name: 'b',
-				type: 'uint256'
+				name: "b",
+				type: "uint256"
 			}
 		],
-		name: 'safeMul',
+		name: "safeMul",
 		outputs: [
 			{
-				name: 'c',
-				type: 'uint256'
+				name: "c",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'pure',
-		type: 'function'
+		stateMutability: "pure",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [
 			{
-				name: 'a',
-				type: 'uint256'
+				name: "a",
+				type: "uint256"
 			},
 			{
-				name: 'b',
-				type: 'uint256'
+				name: "b",
+				type: "uint256"
 			}
 		],
-		name: 'safeSub',
+		name: "safeSub",
 		outputs: [
 			{
-				name: 'c',
-				type: 'uint256'
+				name: "c",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'pure',
-		type: 'function'
+		stateMutability: "pure",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [],
-		name: 'symbol',
+		name: "symbol",
 		outputs: [
 			{
-				name: '',
-				type: 'string'
+				name: "",
+				type: "string"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	},
 	{
 		constant: true,
 		inputs: [],
-		name: 'totalSupply',
+		name: "totalSupply",
 		outputs: [
 			{
-				name: '',
-				type: 'uint256'
+				name: "",
+				type: "uint256"
 			}
 		],
 		payable: false,
-		stateMutability: 'view',
-		type: 'function'
+		stateMutability: "view",
+		type: "function"
 	}
 ];
 

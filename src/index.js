@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import * as serviceWorker from './serviceWorker';
-import { Web3Provider } from './context/web3-context';
-import Media from 'react-media';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import * as serviceWorker from "./serviceWorker";
+import { Web3Provider } from "./context/web3-context";
+import Media from "react-media";
 
-import App from './App';
-import Mobile from './components/Mobile';
+import App from "./App";
+import Mobile from "./components/Mobile";
 
 ReactDOM.render(
 	<Media query="(min-width: 320px) and (max-width: 767px)">
@@ -20,7 +20,7 @@ ReactDOM.render(
 			)
 		}
 	</Media>,
-	document.getElementById('root')
+	document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

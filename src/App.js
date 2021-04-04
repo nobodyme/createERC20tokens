@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import CreateToken from './components/CreateToken';
-import Description from './components/Description';
-import './App.css';
+import React, { useState } from "react";
+import CreateToken from "./components/CreateToken";
+import Description from "./components/Description";
+import "./App.css";
 
-import { useWeb3 } from './context/web3-context';
+import { useWeb3 } from "./context/web3-context";
 
 function App() {
 	const web3 = useWeb3();

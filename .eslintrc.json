@@ -1,0 +1,38 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "settings": {
+        "react": {
+            "version": "16.9.0"
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "rules": {
+        "indent": ["error", "tab"],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"],
+        "no-eval": "error",
+		"no-extra-bind": "warn",
+		"vars-on-top": "warn",
+		"no-return-assign": "error",
+		"no-useless-return": "warn",
+		"prefer-const": "warn",
+        "react/prop-types": 0,
+		"brace-style": ["warn", "1tbs", { "allowSingleLine": true }],
+		"no-unused-vars": ["error", {"argsIgnorePattern": "^_ignore"}]
+    }
+}

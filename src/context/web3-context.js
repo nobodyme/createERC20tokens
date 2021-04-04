@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Web3 from 'web3';
+import React, { useState } from "react";
+import Web3 from "web3";
 
 const Web3Context = React.createContext();
 
@@ -28,7 +28,7 @@ function Web3Provider(props) {
 function useWeb3() {
 	const context = React.useContext(Web3Context);
 	if (context === undefined) {
-		throw new Error(`useWeb3 must be used within a Web3Provider`);
+		throw new Error("useWeb3 must be used within a Web3Provider");
 	}
 	return context;
 }

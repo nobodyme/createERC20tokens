@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useWeb3 } from '../context/web3-context';
+import React, { useState } from "react";
+import { useWeb3 } from "../context/web3-context";
 
-import '../styles/components/CreateToken.css';
+import "../styles/components/CreateToken.css";
 
-import CreateTokenForm from './CreateTokenForm';
-import Error from './Error';
-import StageIndicator from './StageIndicator';
+import CreateTokenForm from "./CreateTokenForm";
+import Error from "./Error";
+import StageIndicator from "./StageIndicator";
 
 function CreateToken({ ethereumNetwork }) {
 	const web3 = useWeb3();
@@ -49,8 +49,8 @@ function CreateToken({ ethereumNetwork }) {
 						</div>
 						<div className="createToken__formDisclaimer">
 							{submitToggle === false
-								? 'We take no responsibility for any security problems you might experience, please verify the contract yourself.'
-								: 'You can close the tab or browser anytime now. The deployment will continue and you can check the result in your connected wallet.'}
+								? "We take no responsibility for any security problems you might experience, please verify the contract yourself."
+								: "You can close the tab or browser anytime now. The deployment will continue and you can check the result in your connected wallet."}
 						</div>
 					</div>
 				</div>

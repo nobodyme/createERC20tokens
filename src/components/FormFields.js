@@ -1,6 +1,6 @@
-import React from 'react';
-import { Field } from 'formik';
-import '../styles/components/FormFields.css';
+import React from "react";
+import { Field } from "formik";
+import "../styles/components/FormFields.css";
 
 function FormFields() {
 	return (

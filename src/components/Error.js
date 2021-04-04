@@ -1,16 +1,16 @@
-import React from 'react';
-import metamaskFox from '../images/metamaskFox.svg';
+import React from "react";
+import metamaskFox from "../images/metamaskFox.svg";
 // import { FiExternalLink } from 'react-icons/fi';
 
-import '../styles/components/Error.css';
+import "../styles/components/Error.css";
 
 function Error({ web3 }) {
 	let description;
 	if (web3 === null)
 		description =
-			'Please connect the site to an etherum wallet like metamask to continue';
+			"Please connect the site to an etherum wallet like metamask to continue";
 	else {
-		description = 'User denied access, refresh to continue';
+		description = "User denied access, refresh to continue";
 	}
 
 	return (
@@ -42,8 +42,8 @@ function Error({ web3 }) {
 				<div
 					className={`error__description ${
 						web3 === 1
-							? 'description__error__alert'
-							: 'description__warning__alert'
+							? "description__error__alert"
+							: "description__warning__alert"
 					}`}
 				>
 					{description}

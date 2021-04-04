@@ -1,12 +1,12 @@
-import React from 'react';
-import '../styles/components/StageIndicator.css';
+import React from "react";
+import "../styles/components/StageIndicator.css";
 
-import StatusHelper from './StatusHelper';
+import StatusHelper from "./StatusHelper";
 
-import { getEtherscanUrl } from '../utils/getEtherscanUrl';
-import { FaEthereum } from 'react-icons/fa';
-import { GiPayMoney, GiThunderball } from 'react-icons/gi';
-import { IoIosNavigate, IoMdCopy, IoIosArrowRoundUp } from 'react-icons/io';
+import { getEtherscanUrl } from "../utils/getEtherscanUrl";
+import { FaEthereum } from "react-icons/fa";
+import { GiPayMoney, GiThunderball } from "react-icons/gi";
+import { IoIosNavigate, IoMdCopy, IoIosArrowRoundUp } from "react-icons/io";
 
 function StageIndicator({
 	setSubmitToggle,
@@ -16,7 +16,7 @@ function StageIndicator({
 	ethereumNetwork,
 	deploymentError
 }) {
-	let etherscanUrl = getEtherscanUrl(ethereumNetwork);
+	const etherscanUrl = getEtherscanUrl(ethereumNetwork);
 
 	return (
 		<div className="stageIndicator">
