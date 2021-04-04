@@ -26,7 +26,7 @@ function CreateToken({ ethereumNetwork }) {
 						<div className="createToken__form">
 							{submitToggle === false ? (
 								<>
-									<div className="createToken__formHeader">Generate Tokens</div>
+									<div className="createToken__formHeader">Create Tokens</div>
 									<CreateTokenForm
 										web3={web3}
 										setDeploymentError={setDeploymentError}

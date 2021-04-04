@@ -109,7 +109,7 @@ function StageIndicator({
 					<span className="newTokenButton__icon">
 						<GiThunderball />
 					</span>
-					Generate New Token
+					Create New Token
 				</button>
 				{deploymentError && (
 					<div className="form__errors">! {deploymentError}</div>
