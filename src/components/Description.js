@@ -7,7 +7,7 @@ function Description({ ethereumNetwork }) {
 			<div className="description__header">
 				<div className="description__title">
 					<div className="description__tag description__token">ERC20</div>
-					<div className="description__tag">Generate Tokens</div>
+					<div className="description__tag">Create Tokens</div>
 					<div className="description__network">
 						{ethereumNetwork !== null ? (
 							<span className="description__networkInfo networkInfo__active">
