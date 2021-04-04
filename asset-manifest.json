@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/createERC20tokens/static/css/main.eaf0382d.chunk.css",
+    "main.js": "/createERC20tokens/static/js/main.39e328c8.chunk.js",
+    "main.js.map": "/createERC20tokens/static/js/main.39e328c8.chunk.js.map",
+    "runtime-main.js": "/createERC20tokens/static/js/runtime-main.1c8c22bc.js",
+    "runtime-main.js.map": "/createERC20tokens/static/js/runtime-main.1c8c22bc.js.map",
+    "static/js/2.31092c02.chunk.js": "/createERC20tokens/static/js/2.31092c02.chunk.js",
+    "static/js/2.31092c02.chunk.js.map": "/createERC20tokens/static/js/2.31092c02.chunk.js.map",
+    "index.html": "/createERC20tokens/index.html",
+    "static/css/main.eaf0382d.chunk.css.map": "/createERC20tokens/static/css/main.eaf0382d.chunk.css.map",
+    "static/js/2.31092c02.chunk.js.LICENSE.txt": "/createERC20tokens/static/js/2.31092c02.chunk.js.LICENSE.txt",
+    "static/media/metamaskFox.71f3ed9a.svg": "/createERC20tokens/static/media/metamaskFox.71f3ed9a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c8c22bc.js",
+    "static/js/2.31092c02.chunk.js",
+    "static/css/main.eaf0382d.chunk.css",
+    "static/js/main.39e328c8.chunk.js"
+  ]
+}
